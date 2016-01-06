@@ -10,7 +10,7 @@ from social.backends.oauth import BaseOAuth2
 from social.exceptions import AuthException, AuthCanceled, AuthUnknownError, \
                               AuthMissingParameter
 
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 __author__ = 'nagai'
 
@@ -59,3 +59,7 @@ class Auth0OAth2(BaseOAuth2):
         params = dict()
         params['access_token'] = access_token
         return self.get_json(self.USER_DATA_URL.format(domain=self._get_base_uri()), params=params)
+
+    def get_user_id(self, details, response):
+        """ Get the permanent ID for this user from Auth0. """
+        return response.get('user_id', u'')

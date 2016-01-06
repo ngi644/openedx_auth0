@@ -17,7 +17,7 @@ setup(
     author='Takashi Nagai',
     author_email='ngi644@gmail.com',
     url='',
-    version= __version__,
+    version=__version__,
     license='GPL-3.0',
     keywords=['openedx', 'auth0'],
     packages=find_packages(),
