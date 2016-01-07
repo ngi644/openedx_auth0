@@ -3,16 +3,13 @@
 Auth0 backend.
 """
 
-import json
+import logging
 from django.conf import settings
-from social.utils import parse_qs, constant_time_compare, handle_http_errors
 from social.backends.oauth import BaseOAuth2
-from social.exceptions import AuthException, AuthCanceled, AuthUnknownError, \
-                              AuthMissingParameter
 
 __version__ = '0.1.1'
 
-__author__ = 'nagai'
+__author__ = 'Takashi NAGAI'
 
 
 class Auth0OAth2(BaseOAuth2):
@@ -52,7 +49,8 @@ class Auth0OAth2(BaseOAuth2):
                 'email': response.get('email', u''),
                 'fullname': fullname,
                 'first_name': first_name,
-                'last_name': last_name}
+                'last_name': last_name,
+                }
 
     def user_data(self, access_token, *args, **kwargs):
         """Loads user data from Auth0"""
