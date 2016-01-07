@@ -1,16 +1,19 @@
-# open-edx athentication with auth0
+# User authentication of Open edX using Auth0
 
-
-Now At Work
+This package is available for Auth0 service to authenticate users for edX.
 
 
 ##Install open edx environment
 
 `sudo su - edxapp -s /bin/bash`
 
+`cd ~/`
+
 `. edxapp_env`
 
-`pip install -e git+https://github.com/ngi644/openedx_auth0`
+`git clone https://github.com/ngi644/openedx_auth0`
+
+`pip install -e openedx_auth0`
 
 
 ##Add parameter

@@ -13,7 +13,7 @@ __author__ = 'nagai'
 
 setup(
     name='openedx_auth0',
-    description='',
+    description='User authentication of Open edX using Auth0',
     author='Takashi Nagai',
     author_email='ngi644@gmail.com',
     url='',
