@@ -12,7 +12,7 @@ __version__ = '0.1.1'
 __author__ = 'Takashi NAGAI'
 
 
-class Auth0OAth2(BaseOAuth2):
+class Auth0OAuth2(BaseOAuth2):
     """
     Auth0 backend
     """

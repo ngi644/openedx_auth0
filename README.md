@@ -3,7 +3,7 @@
 This package is available for Auth0 service to authenticate users for edX.
 
 
-##Install open edx environment
+## Install
 
 `sudo su - edxapp -s /bin/bash`
 
@@ -13,23 +13,39 @@ This package is available for Auth0 service to authenticate users for edX.
 
 `git clone https://github.com/ngi644/openedx_auth0`
 
-`pip install -e openedx_auth0`
+`pip install -e openedx_auth0/`
 
 
-##Add parameter
+## Add parameters
 
-In `lms.env.json` and `cms.env.json`  file:
+In `lms.env.json`  file:
 
-`"ADDL_INSTALLED_APPS": ["openedx_auth0"],`
+- `"ADDL_INSTALLED_APPS": ["openedx_auth0"]` to the root node.
 
- to the root node.
+- `"THIRD_PARTY_AUTH_BACKENDS": ["openedx_auth0.auth0.Auth0OAuth2"]` to the root node.
 
-
-`"AUTH0_DOMAIN": "your.auth0.domain"`
-
- to the list of `FEATURES`.
+- `"AUTH0_DOMAIN": "your.auth0.domain"` to the list of `FEATURES`.
 
 
-##Restart edxapp
+## Migrate DB
+
+```
+~$ cd /edx/app/edxapp/edx-platform
+```
+
+```
+~/edx-platform$ python /edx/app/edxapp/edx-platform/manage.py lms syncdb --migrate --settings=aws
+```
+
+
+## Restart edxapp
 
 `sudo /edx/bin/supervisorctl restart edxapp:`
+
+
+## Django's management page, set for third-party authentication backend.
+
+Open URL `/admin` on Browser.
+ 
+ 
+
