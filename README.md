@@ -26,6 +26,8 @@ In `lms.env.json`  file:
 
 - `"AUTH0_DOMAIN": "your.auth0.domain"` to the list of `FEATURES`.
 
+- `"ENABLE_THIRD_PARTY_AUTH": true` in the list of `FEATURES`.
+
 
 ## Migrate DB
 
