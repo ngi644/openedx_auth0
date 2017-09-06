@@ -48,13 +48,21 @@ In `lms.env.json`  file:
 ## Django's management page, set for third-party authentication backend.
 
 Open URL `/admin` on Browser.
+
 Go to `Home › Third_Party_Auth › Provider Configuration (OAuth)` and click Add Provider Configuration
+
 Check off `Enabled` checkbox
+
 Add a name in the `Name` input, ie. Auth0
+
 Check off `Skip Email Verification` checkbox
+
 Choose `Backend Name`: oa2-auth0
+
 Input your `Client ID` and `Client Secret`
-In `Other Settings`, paste this: ```{"SCOPE": ["email openid profile"]}``` this makes sure we can fetch the whole profile from Auth0 and your email address and other info will be properly populated in registration form
+
+In `Other Settings`, paste this: ```{"SCOPE": ["email openid profile"]}``` this makes sure we can fetch the whole profile from 
+Auth0 and your email address and other info will be properly populated in registration form
 
  
 
