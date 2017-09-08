@@ -60,4 +60,4 @@ class Auth0OAuth2(BaseOAuth2):
 
     def get_user_id(self, details, response):
         """ Get the permanent ID for this user from Auth0. """
-        return response.get('user_id', u'')
+        return response.get('sub', u'')
