@@ -24,7 +24,9 @@ setup(
     include_package_data=True,
     install_requires=[
         'python-social-auth',
-        'social-auth-app-django'
+        'social-auth-core',
+        'social-auth-app-django',
+        'django'
     ],
     classifiers=[
         # https://pypi.python.org/pypi?%3Aaction=list_classifiers
