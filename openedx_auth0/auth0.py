@@ -7,7 +7,7 @@ import logging
 from django.conf import settings
 from social.backends.oauth import BaseOAuth2
 
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 
 __author__ = 'Takashi NAGAI'
 
