@@ -92,7 +92,7 @@ Open URL `/admin` on Browser.
 
 Go to `Home › Third_Party_Auth › Provider Configuration (OAuth)` and
 
-OR you can simple  Go to
+OR you can simply Go to
 
 `Your_LMS_URL/admin/third_party_auth/oauth2providerconfig/`
 
