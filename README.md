@@ -29,6 +29,7 @@ Edit your lms.yml (**Path** - _/edx/etc/lms.yml_ ) file in following format -
 |  AUTH0_DOMAIN | **CopyThisFromYourAuth0Console**  | Key-Value Pair  | in **FEATURES**  |
 |  ENABLE_THIRD_PARTY_AUTH |  true | Boolean  | in **FEATURES**  |
 
+*I had to create ADDL_INSTALLED_APPS key as it was not existing before
 *Also Keep your ClientID & ClientSecret ready.
 
 ### For Older Releases
