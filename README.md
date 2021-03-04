@@ -88,13 +88,15 @@ sudo /edx/bin/supervisorctl restart lms cms
 
 ## Configuration from Django's Admin Panel (for third-party authentication backend)
 
-Go to `Your_LMS_URL/admin/third_party_auth/oauth2providerconfig/`
-
-### OR 
-
 Open URL `/admin` on Browser.
 
-Go to `Home › Third_Party_Auth › Provider Configuration (OAuth)` and click Add Provider Configuration
+Go to `Home › Third_Party_Auth › Provider Configuration (OAuth)` and
+
+OR you can simple  Go to
+
+`Your_LMS_URL/admin/third_party_auth/oauth2providerconfig/`
+
+Now click Add Provider Configuration
 
 Make sure `Enabled` checkbox is checked
 
