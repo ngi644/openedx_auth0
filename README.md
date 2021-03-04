@@ -20,7 +20,7 @@ This package is available for Auth0 service to authenticate users for edX.
 
 ### For latest KOA Release
 
-Edit your lms.yml (**Path** - _/edx/etc/lms.yml_ ) file in following format - 
+Edit your lms.yml (**Path** - _/edx/etc/lms.yml_ ) file in following format -
 
 | KEY  | VALUE | FIELD_TYPE | YAML_FIELD_LOCATION |
 | ------------- | ------------- | ------------- | ------------- |
@@ -28,8 +28,8 @@ Edit your lms.yml (**Path** - _/edx/etc/lms.yml_ ) file in following format -
 |  THIRD_PARTY_AUTH_BACKENDS | openedx_auth0.auth0.Auth0OAuth2  | LIST  | ROOT_NODE  |
 |  AUTH0_DOMAIN | **CopyThisFromYourAuth0Console**  | Key-Value Pair  | in **FEATURES**  |
 |  ENABLE_THIRD_PARTY_AUTH |  true | Boolean  | in **FEATURES**  |
-    
-*ALso Keep your ClientID & ClientSecret ready.
+
+*Also Keep your ClientID & ClientSecret ready.
 
 ### For Older Releases
 
@@ -50,6 +50,17 @@ In `lms.env.json`  file:
 ~$ cd /edx/app/edxapp/edx-platform
 ```
 
+### For Native Koa Releases
+First makemigrations command
+```
+python /edx/app/edxapp/edx-platform/manage.py lms makemigrations --settings=production
+```
+and then finally run migrations
+```
+~/edx-platform$ python /edx/app/edxapp/edx-platform/manage.py lms migrate --migrate --settings=production
+```
+
+### For Others (Not Sure)
 ```
 ~/edx-platform$ python /edx/app/edxapp/edx-platform/manage.py lms syncdb --migrate --settings=aws
 ```
@@ -76,8 +87,8 @@ Choose `Backend Name`: oa2-auth0
 
 Input your `Client ID` and `Client Secret`
 
-In `Other Settings`, paste this: ```{"SCOPE": ["email openid profile"]}``` this makes sure we can fetch the whole profile from 
+In `Other Settings`, paste this: ```{"SCOPE": ["email openid profile"]}``` this makes sure we can fetch the whole profile from
 Auth0 and your email address and other info will be properly populated in registration form
 
- 
+
 
