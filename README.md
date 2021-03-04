@@ -25,7 +25,7 @@ Edit your lms.yml (**Path** - _/edx/etc/lms.yml_ ) file in following format -
 | KEY  | VALUE | FIELD_TYPE | YAML_FIELD_LOCATION |
 | ------------- | ------------- | ------------- | ------------- |
 |  ADDL_INSTALLED_APPS | openedx_auth0  | LIST  | ROOT_NODE  |
-|  THIRD_PARTY_AUTH_BACKENDS | openedx_auth0.openedx_auth0.auth0.Auth0OAuth2  | LIST  | ROOT_NODE  |
+|  THIRD_PARTY_AUTH_BACKENDS | openedx_auth0.auth0.Auth0OAuth2  | LIST  | ROOT_NODE  |
 |  AUTH0_DOMAIN | **CopyThisFromYourAuth0Console**  | Key-Value Pair  | in **FEATURES**  |
 |  ENABLE_THIRD_PARTY_AUTH |  true | Boolean  | in **FEATURES**  |
 
