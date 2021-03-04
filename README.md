@@ -11,7 +11,7 @@ This package is available for Auth0 service to authenticate users for edX.
 
 `. edxapp_env`
 
-`git clone https://github.com/ngi644/openedx_auth0`
+`git clone https://github.com/kratik-perpetualny/openedx_auth0`
 
 `pip install -e openedx_auth0/`
 

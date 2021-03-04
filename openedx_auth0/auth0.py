@@ -5,7 +5,7 @@ Auth0 backend.
 
 import logging
 from django.conf import settings
-from social.backends.oauth import BaseOAuth2
+from social_core.backends.oauth import BaseOAuth2
 
 __version__ = '0.1.2'
 
