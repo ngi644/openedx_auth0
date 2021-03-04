@@ -7,9 +7,9 @@ This package is available for Auth0 service to authenticate users for edX.
 
 `sudo su - edxapp -s /bin/bash`
 
-`cd ~/`
+`cd`
 
-`. edxapp_env`
+`source edxapp_env`
 
 `git clone https://github.com/kratik-perpetualny/openedx_auth0`
 
@@ -30,6 +30,7 @@ Edit your lms.yml (**Path** - _/edx/etc/lms.yml_ ) file in following format -
 |  ENABLE_THIRD_PARTY_AUTH |  true | Boolean  | in **FEATURES**  |
 
 *I had to create ADDL_INSTALLED_APPS key as it was not existing before
+
 *Also Keep your ClientID & ClientSecret ready.
 
 ### For Older Releases
@@ -47,21 +48,29 @@ In `lms.env.json`  file:
 
 ## Migrate DB
 
-```
-~$ cd /edx/app/edxapp/edx-platform
-```
-
 ### For Native Koa Releases
-First makemigrations command
+
+Keep your Shell ready first
+```
+sudo su - edxapp -s /bin/bash
+cd
+source edxapp_env
+```
+Then makemigrations command
 ```
 python /edx/app/edxapp/edx-platform/manage.py lms makemigrations --settings=production
 ```
-and then finally run migrations
+and finally run migrations
 ```
 ~/edx-platform$ python /edx/app/edxapp/edx-platform/manage.py lms migrate --migrate --settings=production
 ```
 
-### For Others (Not Sure)
+### For Others (Not Tried)
+
+```
+~$ cd /edx/app/edxapp/edx-platform
+```
+
 ```
 ~/edx-platform$ python /edx/app/edxapp/edx-platform/manage.py lms syncdb --migrate --settings=aws
 ```
@@ -69,10 +78,19 @@ and then finally run migrations
 
 ## Restart edxapp
 
+### Koa
+```
+sudo /edx/bin/supervisorctl restart lms cms
+```
+### Older Versions
 `sudo /edx/bin/supervisorctl restart edxapp:`
 
 
-## Django's management page, set for third-party authentication backend.
+## Configuration from Django's Admin Panel (for third-party authentication backend)
+
+Go to `Your_LMS_URL/admin/third_party_auth/oauth2providerconfig/`
+
+### OR 
 
 Open URL `/admin` on Browser.
 
@@ -94,4 +112,6 @@ In `Other Settings`, paste this: ```{"SCOPE": ["email openid profile"]}``` this 
 Auth0 and your email address and other info will be properly populated in registration form
 
 
-
+## Inspiration
+I think somewhere it is inspired by https://auth0.com/docs/quickstart/webapp/django/01-login#configure-auth0
+Good to have a look at this.
