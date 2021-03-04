@@ -77,7 +77,9 @@ Open URL `/admin` on Browser.
 
 Go to `Home › Third_Party_Auth › Provider Configuration (OAuth)` and click Add Provider Configuration
 
-Check off `Enabled` checkbox
+Make sure `Enabled` checkbox is checked
+
+Make sure `Visible` checkbox is checked
 
 Add a name in the `Name` input, ie. Auth0
 
