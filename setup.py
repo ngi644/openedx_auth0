@@ -6,13 +6,13 @@ Auth0 for OEDX
 
 from setuptools import setup, find_packages
 
-from openedx_auth0.auth0 import __version__
+from auth0.auth0 import __version__
 
 __author__ = 'nagai'
 
 
 setup(
-    name='openedx_auth0',
+    name='auth0',
     description='User authentication of Open edX using Auth0',
     author='Takashi Nagai',
     author_email='ngi644@gmail.com',
